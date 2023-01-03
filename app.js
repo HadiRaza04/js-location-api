@@ -1,12 +1,10 @@
-const element = document.getElementById("demo");
+let element = document.getElementById("demo");
 const getLocation = () => {
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(getPosition);
     }
-    else{
-        element.innerHTML = "Location not supported";
-    }   
 }
 const getPosition = (position) => {
-    element.innerHTML = `Latitude is: ${position.coords.latitude} <br> Longitude is: ${position.coords.longitude}`;
+    element.innerHTML = `${position.coords.latitude},${position.coords.longitude} <br> Copy above given number and just paste it on <a href="https://maps.google.com/" target="_blank">Google Map</a> search bar.`;
+
 }
